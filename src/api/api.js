@@ -10,23 +10,27 @@ export const login = (username, password, code) => (
         url = `${API_URL}/login`,
         method = 'post',
         data = { username, password, code },
-        showError = true,
     )
 );
 
-export const getLeaderboard = (urlExtra) => (
+export const getProducts = () => (
     HttpGet(
-        url = `${API_URL}/dashboard/leaderboard?${urlExtra}`,
+        url = `${API_URL}/products`,
         method = 'get',
-        showError = false,
     )
 );
 
-export const markNotifications = () => (
+export const getProductDetail = (id) => (
+    HttpGet(
+        url = `${API_URL}/products/${id}`,
+        method = 'get',
+    )
+);
+
+export const setFavorite = (id, value) => (
     Http(
-        url = `${API_URL}/notifications/mark_as_seen`,
+        url = `${API_URL}/products/${id}`,
         method = 'put',
-        data = {},
-        showError = false,
+        data = { favorite: value },
     )
 );

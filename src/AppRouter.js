@@ -4,17 +4,15 @@ import { connect } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Toast from 'react-native-toast-message';
-
-import * as Linking from 'expo-linking';
 import { navigationRef } from './helpers/navigatorHelper';
 
 import {
 } from './actions';
 
 import Category from './components/Products/Category';
-import Category from './components/Products/ProductDetail';
-import Category from './components/Products/ProductList';
-import Category from './components/Products/Favorites';
+import ProductDetail from './components/Products/ProductDetail';
+import ProductList from './components/Products/ProductList';
+import Favorites from './components/Products/Favorites';
 
 const toastConfig = {
   'success': (internalState) => (
